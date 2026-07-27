@@ -2,61 +2,53 @@
 
 ## Business Problem
 
-Telephone-based ordering systems are costly to staff, slow at peak times, and deliver inconsistent customer experiences. A voice AI agent can handle the full ordering conversation — taking the order, handling modifications, confirming details, and managing payment handoff — without queue times or training costs.
+Ordering food by voice sounds simple until you look at what actually has to happen between "get me a pizza" and a completed order: understanding intent, matching it to a real menu within budget, and then acting on it - without silently placing an order the user didn't confirm.
 
 ## Solution Overview
 
-A real-time voice agent that conducts a natural, multi-turn conversation with customers to take pizza orders. Built on OpenAI Realtime APIs for low-latency voice interaction, with an agentic workflow managing order state, item validation, upsell prompts, and confirmation. The agent maintains full conversation context across turns and gracefully handles corrections and ambiguous requests.
+A voice-first pizza ordering agent with a three-layer pipeline. The **brain layer** uses LangChain with Google Gemini (structured JSON output) to extract order intent from natural speech or text. The **decision layer** matches that intent against a menu catalogue, validates it against budget, and selects a store. The **automation layer** uses Playwright to drive a real checkout flow through to the final step - and stops there. A human always confirms before anything is submitted.
 
 ## Architecture
 
 ```
-Customer (voice input)
-    ↓
-OpenAI Realtime API (speech-to-text + LLM + text-to-speech)
-    ↓
-Agentic Order Manager (tool-use loop)
-├── Menu Lookup Tool
-├── Order State Manager
-├── Upsell Tool
-└── Confirmation + Handoff Tool
-    ↓
-Order System (webhook / API)
+Voice / text input (Web Speech API)
+    |
+LangChain + Gemini 2.5 Flash  --  structured OrderIntent (JSON schema)
+    |
+Decision layer  --  menu match, budget check, store selection  -->  OrderPlan
+    |
+Playwright automation  --  fills checkout, pauses before final submit
+    |
+Human confirmation  -->  order placed
 ```
-
-1. **Voice Interface** — OpenAI Realtime APIs handle speech-to-text and text-to-speech in a single low-latency pipeline, enabling natural conversation without perceptible delay.
-2. **Agentic Order Manager** — an LLM-driven agent maintains order state across turns, calling tools to look up menu items, add or remove items, and validate the order before confirmation.
-3. **Multi-turn Dialogue** — the agent tracks conversation history, handles corrections ("actually, make that a large"), and disambiguates unclear requests ("which size?").
-4. **Handoff** — once confirmed, the order is submitted via webhook to the order management system and the agent confirms with a reference number.
 
 ## Technologies Used
 
-- OpenAI Realtime APIs (voice + LLM)
-- Python (agent orchestration)
-- WebSockets (real-time audio streaming)
-- FastAPI (webhook and API layer)
+- React 19, TypeScript, Vite
+- Express (Node.js backend)
+- LangChain + Google Gemini (structured output)
+- Playwright (Chromium automation)
+- Zod (schema validation)
 
 ## AI Concepts Demonstrated
 
-- Voice AI (real-time speech interaction)
-- Agentic Workflows (tool-use loop for order management)
-- Order Management (stateful, multi-step ordering)
-- Multi-turn Conversations (context preservation across turns)
+- Structured output extraction (JSON schema-constrained generation, not free text)
+- A decision layer that keeps business logic - budget, matching - out of the LLM and in deterministic code
+- Human-in-the-loop guardrails around an agent that can take real-world action
+- Voice as an input modality on top of an otherwise text-first pipeline
 
 ## Key Learnings
 
-- Low-latency is critical for voice — any perceivable pause breaks the conversational feel. OpenAI Realtime APIs handle this at the API level, removing the need to chain separate ASR → LLM → TTS calls.
-- Stateful order management via tool use is more reliable than trying to maintain order state in the LLM context alone — tools act as the ground truth.
-- Handling corrections mid-conversation requires explicit state tracking, not just re-reading the transcript.
-- Graceful failure (item not available, unclear request) needs explicit agent paths — the LLM alone will hallucinate menu items if not grounded in a real lookup tool.
+- Separating "what does the user want" (LLM) from "is this a valid, affordable option" (deterministic code) makes the system far easier to test and debug than asking the LLM to do both.
+- Browser automation against a real site is fragile by nature - selector strategies need multiple fallbacks, and the automation should always have a safe stopping point rather than assuming every click succeeds.
+- A human-in-the-loop pause isn't just a safety feature, it's what makes it reasonable to automate a real transaction at all.
 
-## Screenshots
+## Code
 
-_Screenshots to be added._
+This is a personal project with real, working automation against live pizza ordering sites. The repository stays **private** rather than public - the code targets specific third-party sites by name, and publishing automation against a live business's checkout without their agreement isn't something to hand out, even with the safety guardrail in place.
 
 ## Future Enhancements
 
-- Support for loyalty programme lookup (recognise returning customers by phone number)
-- Multi-language support using Realtime API language switching
-- Live order tracking integration — agent can answer "where's my order?" questions
-- Sentiment detection — escalate to human agent if customer frustration is detected
+- Additional store adapters behind the same decision-layer interface
+- Persisted order history and repeat-order shortcuts
+- Multi-language voice input
