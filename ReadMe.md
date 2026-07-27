@@ -34,6 +34,23 @@ Most enterprise work is delivered under client NDA, so those repos stay private 
 | [AI Test Case Generator](Projects/Retrieval-Systems/AI-Test-Case-Generator/) | LLM-driven test case generation from natural language prompts, RAG-enriched | 📄 Case study only (client work) |
 | [AI Test Data Generator](Projects/Retrieval-Systems/AI-Test-Data-Generator/) | Synthetic test data generation with schema-driven field definitions | 📄 Case study only (client work) |
 | [Azure AI Search - Document Q&A](Projects/Retrieval-Systems/Azure-AI-Search-RAG/) | Document upload, indexing and full-text retrieval on Azure | 🔓 [Repo](https://github.com/Pankaj81-eng/azure-ai-search-rag) |
+| [Document Summarizer](Projects/Retrieval-Systems/Document-Summarizer/) | Azure OpenAI-powered summarisation of uploaded PDF, Word and text documents | 🔒 Private (personal project) |
+
+## QA Automation
+
+Testing discipline from my software engineering background, before the shift into AI.
+
+| Project | What it does | Code |
+|---|---|---|
+| [Personal Loans Automation](Projects/QA-Automation/Personal-Loans-Automation/) | Selenium-driven end-to-end automation of a multi-step loan application workflow | 🔒 Private (personal project) |
+
+## Data Tools
+
+Small Python tools built to solve a specific personal problem with data.
+
+| Project | What it does | Code |
+|---|---|---|
+| [Finance Insights App](Projects/Data-Tools/Finance-Insights-App/) | Streamlit + Plotly tool that visualises bank statement spending by category | 🔒 Private (personal project) |
 
 ---
 
