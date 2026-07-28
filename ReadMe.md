@@ -1,6 +1,6 @@
 # Pankaj's Project Journey
 
-Case studies for the AI systems I've built - enterprise platforms delivered at [Kyndryl](https://www.kyndryl.com)'s AI Innovation Lab, and personal projects built to explore specific techniques.
+Case studies for the AI systems I've built - enterprise platforms delivered at an AI Innovation Lab, and personal projects built to explore specific techniques.
 
 Most enterprise work is delivered under client NDA, so those repos stay private - each still gets a full write-up here covering the problem, architecture and results. Personal projects link straight through to their public code.
 
