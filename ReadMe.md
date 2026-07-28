@@ -8,7 +8,7 @@ Most enterprise work is delivered under client NDA, so those repos stay private 
 
 | Project | What it does | Code |
 |---|---|---|
-| [Voice Pizza Agent](Projects/Agentic-AI/Voice-Pizza-Agent/) | Voice-first ordering: structured intent extraction, decision layer, Playwright automation with human-in-the-loop | 🔒 Private (personal project) |
+| [Voice Pizza Agent](Projects/Agentic-AI/Voice-Pizza-Agent/) | Voice-first ordering: structured intent extraction, decision layer, Playwright automation with human-in-the-loop | 🔒 Private · 🎥 [Demo](https://www.youtube.com/watch?v=KLMR7H7rU3g) |
 | [Python Mentor](Projects/Agentic-AI/Python-Mentor/) | AI-powered Python tutor with gamified, personalised learning paths | 🔓 [Repo](https://github.com/Pankaj81-eng/TechTales-Python-Mentor) · [Live demo](https://techtales-mentor.streamlit.app/) |
 | [Nemo AI Companion](Projects/Agentic-AI/Nemo-AI-Companion/) | Conversational knowledge assistant with search and tool use | 📄 Case study only |
 | [LangChain Azure Agent](Projects/Agentic-AI/LangChain-Azure-Agent/) | Minimal LangChain agent on Azure OpenAI demonstrating tool/function calling | 🔓 [Repo](https://github.com/Pankaj81-eng/langchain-azure-agent) |

@@ -1,5 +1,7 @@
 # Voice Pizza Agent
 
+🎥 [Watch the demo](https://www.youtube.com/watch?v=KLMR7H7rU3g)
+
 ## Business Problem
 
 Ordering food by voice sounds simple until you look at what actually has to happen between "get me a pizza" and a completed order: understanding intent, matching it to a real menu within budget, and then acting on it - without silently placing an order the user didn't confirm.
@@ -46,6 +48,8 @@ Human confirmation  -->  order placed
 ## Code
 
 This is a personal project with real, working automation against live pizza ordering sites. The repository stays **private** rather than public - the code targets specific third-party sites by name, and publishing automation against a live business's checkout without their agreement isn't something to hand out, even with the safety guardrail in place.
+
+A [demo video](https://www.youtube.com/watch?v=KLMR7H7rU3g) shows the full flow end-to-end.
 
 ## Future Enhancements
 
