@@ -12,7 +12,7 @@ Most enterprise work is delivered under client NDA, so those repos stay private 
 | [Nemo AI Companion](Projects/Agentic-AI/Nemo-AI-Companion/) | Conversational knowledge assistant with search and tool use | 📄 Case study only |
 | [LangChain Azure Agent](Projects/Agentic-AI/LangChain-Azure-Agent/) | Minimal LangChain agent on Azure OpenAI demonstrating tool/function calling | 🔓 [Repo](https://github.com/Pankaj81-eng/langchain-azure-agent) |
 
-## Enterprise AI Solutions
+## Enterprise Agentic AI Solutions
 
 | Project | What it does | Code |
 |---|---|---|

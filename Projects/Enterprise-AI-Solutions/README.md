@@ -1,4 +1,4 @@
-# Enterprise AI Solutions
+# Enterprise Agentic AI Solutions
 
 AI systems built for large-scale enterprise environments. These projects tackle infrastructure intelligence, platform modernisation, and strategic planning — using Knowledge Graphs, GraphRAG, and Agentic AI patterns.
 
