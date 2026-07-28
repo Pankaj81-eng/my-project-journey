@@ -9,7 +9,6 @@ Most enterprise work is delivered under client NDA, so those repos stay private 
 | Project | What it does | Code |
 |---|---|---|
 | [Voice Pizza Agent](Projects/Agentic-AI/Voice-Pizza-Agent/) | Voice-first ordering: structured intent extraction, decision layer, Playwright automation with human-in-the-loop | 🔒 Private · 🎥 [Demo](https://www.youtube.com/watch?v=KLMR7H7rU3g) |
-| [Python Mentor](Projects/Agentic-AI/Python-Mentor/) | AI-powered Python tutor with gamified, personalised learning paths | 🔓 [Repo](https://github.com/Pankaj81-eng/TechTales-Python-Mentor) · [Live demo](https://techtales-mentor.streamlit.app/) |
 | [Nemo AI Companion](Projects/Agentic-AI/Nemo-AI-Companion/) | Conversational knowledge assistant with search and tool use | 📄 Case study only |
 | [LangChain Azure Agent](Projects/Agentic-AI/LangChain-Azure-Agent/) | Minimal LangChain agent on Azure OpenAI demonstrating tool/function calling | 🔓 [Repo](https://github.com/Pankaj81-eng/langchain-azure-agent) |
 
@@ -35,6 +34,14 @@ Most enterprise work is delivered under client NDA, so those repos stay private 
 | [AI Test Data Generator](Projects/Retrieval-Systems/AI-Test-Data-Generator/) | Synthetic test data generation with schema-driven field definitions | 📄 Case study only (client work) |
 | [Azure AI Search - Document Q&A](Projects/Retrieval-Systems/Azure-AI-Search-RAG/) | Document upload, indexing and full-text retrieval on Azure | 🔓 [Repo](https://github.com/Pankaj81-eng/azure-ai-search-rag) |
 | [Document Summarizer](Projects/Retrieval-Systems/Document-Summarizer/) | Azure OpenAI-powered summarisation of uploaded PDF, Word and text documents | 🔒 Private (personal project) |
+
+## EdTech / Learning Tools
+
+Personalisation here comes from deterministic rule-based validation, not an LLM - kept as its own category rather than filed under Agentic AI.
+
+| Project | What it does | Code |
+|---|---|---|
+| [Python Mentor](Projects/EdTech-Learning-Tools/Python-Mentor/) | Python learning platform with AST-based per-requirement feedback and gamification | 🔓 [Repo](https://github.com/Pankaj81-eng/TechTales-Python-Mentor) · [Live demo](https://techtales-mentor.streamlit.app/) |
 
 ## QA Automation
 

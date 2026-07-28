@@ -2,7 +2,7 @@
 
 ## Business Problem
 
-Learning to code is hard because feedback is delayed. Beginners write code, run it, get an error, and don't know why. Traditional courses explain concepts but can't respond to what a specific learner got wrong in their specific submission. An AI-powered mentor can give immediate, personalised, and educational feedback on every attempt.
+Learning to code is hard because feedback is delayed. Beginners write code, run it, get an error, and don't know why. Traditional courses explain concepts but can't respond to what a specific learner got wrong in their specific submission. A platform that gives immediate, precise feedback on every attempt closes that loop - without needing an LLM in the critical path.
 
 ## Solution Overview
 
@@ -35,12 +35,12 @@ Feedback Panel (per-requirement pass/fail + improvement suggestions)
 - AST module (code validation and security)
 - Claude API (planned — AI mentor for question answering)
 
-## AI Concepts Demonstrated
+## Engineering Concepts Demonstrated
 
-- AI Learning Assistant (personalised, adaptive feedback)
-- Interactive Learning (real-time code execution and feedback)
-- Python Education (structured curriculum with progressive complexity)
-- Personalized Guidance (per-requirement feedback, not generic pass/fail)
+- Deterministic, rule-based feedback via AST analysis - no LLM in the feedback loop today
+- Sandboxed, isolated code execution for untrusted input
+- Structured curriculum design with progressive difficulty and topic gating
+- Per-requirement feedback design (not generic pass/fail)
 
 ## Key Learnings
 
@@ -48,10 +48,6 @@ Feedback Panel (per-requirement pass/fail + improvement suggestions)
 - Subprocess isolation is essential for educational sandboxes — learner code must not be able to affect the host process.
 - Per-requirement feedback (not a single pass/fail) dramatically improves the learning experience — learners know exactly what to fix.
 - Gamification (XP, progress states) increases completion rates even for simple systems.
-
-## Screenshots
-
-_Screenshots to be added._
 
 ## Future Enhancements
 

@@ -6,5 +6,4 @@ Conversational agents, voice interfaces, and interactive learning systems. These
 |---|---|
 | [Voice Pizza Agent](Voice-Pizza-Agent/) | Voice-first ordering agent: structured intent extraction, decision layer, Playwright automation with human-in-the-loop |
 | [Nemo AI Companion](Nemo-AI-Companion/) | Conversational knowledge assistant with search and tool use |
-| [Python Mentor](Python-Mentor/) | Interactive AI-powered Python learning platform |
 | [LangChain Azure Agent](LangChain-Azure-Agent/) | Minimal LangChain agent on Azure OpenAI demonstrating tool/function calling |
