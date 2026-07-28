@@ -37,7 +37,7 @@ Assertions + screenshot capture  -->  test report
 
 ## Code
 
-Private repo (`Ploans`) - kept private as it automates a specific application workflow rather than being a general-purpose tool.
+Private repo (`Ploans`) - built as part of employment rather than a personal project, so it stays private.
 
 ## Future Enhancements
 

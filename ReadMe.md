@@ -49,7 +49,7 @@ Testing discipline from my software engineering background, before the shift int
 
 | Project | What it does | Code |
 |---|---|---|
-| [Personal Loans Automation](Projects/QA-Automation/Personal-Loans-Automation/) | Selenium-driven end-to-end automation of a multi-step loan application workflow | 🔒 Private (personal project) |
+| [Personal Loans Automation](Projects/QA-Automation/Personal-Loans-Automation/) | Selenium-driven end-to-end automation of a multi-step loan application workflow | 🔒 Private (work project) |
 
 ## Data Tools
 
