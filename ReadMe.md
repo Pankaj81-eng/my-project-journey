@@ -31,7 +31,7 @@ Most enterprise work is delivered under client NDA, so those repos stay private 
 
 | Project | What it does | Code |
 |---|---|---|
-| [AI Test Case Generator](Projects/Retrieval-Systems/AI-Test-Case-Generator/) | LLM-driven test case generation from natural language prompts, RAG-enriched | 📄 Case study only (client work) |
+| [AI Test Case Generator](Projects/Retrieval-Systems/AI-Test-Case-Generator/) | LLM-driven test case generation from natural language prompts, RAG-enriched | 📄 Case study only · 🎥 [Demo](https://www.youtube.com/watch?v=oSUILlU8x6s) |
 | [AI Test Data Generator](Projects/Retrieval-Systems/AI-Test-Data-Generator/) | Synthetic test data generation with schema-driven field definitions | 📄 Case study only (client work) |
 | [Azure AI Search - Document Q&A](Projects/Retrieval-Systems/Azure-AI-Search-RAG/) | Document upload, indexing and full-text retrieval on Azure | 🔓 [Repo](https://github.com/Pankaj81-eng/azure-ai-search-rag) |
 | [Document Summarizer](Projects/Retrieval-Systems/Document-Summarizer/) | Azure OpenAI-powered summarisation of uploaded PDF, Word and text documents | 🔒 Private (personal project) |

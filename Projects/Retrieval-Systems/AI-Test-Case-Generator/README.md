@@ -1,5 +1,7 @@
 # AI Test Case Generator
 
+🎥 [Watch the demo](https://www.youtube.com/watch?v=oSUILlU8x6s)
+
 ## Business Problem
 
 Writing comprehensive test cases manually is time-consuming and inconsistent. QA engineers spend hours translating feature descriptions into structured test scenarios, often missing edge cases. An AI system that generates test cases from natural language prompts can reduce this effort significantly while improving coverage consistency.
@@ -52,10 +54,6 @@ Excel Export (.xlsx)
 - Prompt engineering for structured output requires explicit format instructions and examples; the LLM needs to know exactly what schema to produce.
 - Gradio is excellent for rapid QA tool prototyping — a usable UI in under 20 lines.
 - The generate → export pipeline is easy to extend: swap the LLM, add new export formats, or plug in a different retrieval source without touching the rest.
-
-## Screenshots
-
-_Screenshots to be added._
 
 ## Future Enhancements
 
