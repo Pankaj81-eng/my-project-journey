@@ -1,4 +1,4 @@
-# Infrastructure Discovery Platform
+# VMware Migration Assistant
 
 ## Business Problem
 

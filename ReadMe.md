@@ -17,7 +17,7 @@ Most enterprise work is delivered under client NDA, so those repos stay private 
 
 | Project | What it does | Code |
 |---|---|---|
-| [Infrastructure Discovery Platform](Projects/Enterprise-AI-Solutions/Infrastructure-Discovery-Platform/) | Graph-powered infrastructure mapping and dependency analysis | 📄 [Case study](Projects/Enterprise-AI-Solutions/Infrastructure-Discovery-Platform/README.md) (client work) |
+| [VMware Migration Assistant](Projects/Enterprise-AI-Solutions/Infrastructure-Discovery-Platform/) | Graph-powered infrastructure mapping and dependency analysis | 📄 [Case study](Projects/Enterprise-AI-Solutions/Infrastructure-Discovery-Platform/README.md) (client work) |
 | [Kubernetes Consolidation Assistant](Projects/Enterprise-AI-Solutions/Kubernetes-Consolidation-Assistant/) | Agentic planning system for Kubernetes migration and consolidation | 📄 [Case study](Projects/Enterprise-AI-Solutions/Kubernetes-Consolidation-Assistant/README.md) (client work) |
 | [Enterprise Planning Agent](Projects/Enterprise-AI-Solutions/Enterprise-Planning-Agent/) | LangGraph-based multi-step planning agent for enterprise initiatives | 📄 [Case study](Projects/Enterprise-AI-Solutions/Enterprise-Planning-Agent/README.md) (client work) |
 

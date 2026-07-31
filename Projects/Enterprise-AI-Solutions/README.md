@@ -4,6 +4,6 @@ AI systems built for large-scale enterprise environments. These projects tackle 
 
 | Project | Description |
 |---|---|
-| [Infrastructure Discovery Platform](Infrastructure-Discovery-Platform/) | Graph-powered infrastructure mapping and dependency analysis |
+| [VMware Migration Assistant](Infrastructure-Discovery-Platform/) | Graph-powered infrastructure mapping and dependency analysis |
 | [Kubernetes Consolidation Assistant](Kubernetes-Consolidation-Assistant/) | Agentic planning system for Kubernetes migration and consolidation |
 | [Enterprise Planning Agent](Enterprise-Planning-Agent/) | LangGraph-based multi-step planning agent for enterprise initiatives |
