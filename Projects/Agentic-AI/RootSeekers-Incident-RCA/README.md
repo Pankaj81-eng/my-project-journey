@@ -2,6 +2,8 @@
 
 Built for a Google Cloud hackathon (2026).
 
+🎥 [Watch the demo](https://youtu.be/2NhyX1LoOBc)
+
 ## Business Problem
 
 When an incident hits production, the slowest part of recovery is usually root cause analysis - correlating logs, recent changes, and past incident patterns by hand while the clock is running. A copilot that runs that correlation in parallel and hands back a synthesised root cause with an evidence trail turns a manual investigation into a guided one.
