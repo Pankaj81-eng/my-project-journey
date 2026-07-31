@@ -25,7 +25,7 @@ Most enterprise work is delivered under client NDA, so those repos stay private 
 
 | Project | What it does | Code |
 |---|---|---|
-| [Smart Clinical Assistant](Projects/Healthcare-AI/Smart-Clinical-Assistant/) | AI-powered clinical decision support and knowledge retrieval | 📄 [Case study](Projects/Healthcare-AI/Smart-Clinical-Assistant/README.md) (client work) |
+| [Smart Clinical Triage](Projects/Healthcare-AI/Smart-Clinical-Assistant/) | Multi-agent specialty debate for differential diagnosis, with hybrid AI/expert confidence scoring | 📄 [Case study](Projects/Healthcare-AI/Smart-Clinical-Assistant/README.md) · 🎥 [Demo](https://drive.google.com/file/d/1TgwwDbhPWnQ4IVDUnlfnAjwf6yeKrG87/view?usp=sharing) |
 
 ## AI-Enabled Retrieval Systems
 

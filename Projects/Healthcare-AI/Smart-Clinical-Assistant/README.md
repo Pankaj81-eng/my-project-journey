@@ -1,69 +1,75 @@
-# Smart Clinical Assistant
+# Smart Clinical Triage
+
+Built for a hackathon.
+
+🎥 [Watch the demo](https://drive.google.com/file/d/1TgwwDbhPWnQ4IVDUnlfnAjwf6yeKrG87/view?usp=sharing)
 
 ## Business Problem
 
-Clinical teams spend significant time searching for information — drug interactions, clinical guidelines, patient history summaries — across multiple disconnected systems. This friction slows decision-making, increases cognitive load, and can contribute to clinical errors. A trusted AI assistant that retrieves and synthesises clinical knowledge on demand can reduce this burden without replacing clinical judgement.
+Clinical triage - working out what's wrong and how urgently a patient needs care - relies on a clinician's judgement applied against a huge space of possible conditions. Streamlining the intake and preliminary-diagnosis process, without ever letting AI make the final call, can cut time-to-treatment and reduce unnecessary referrals while keeping a clinician firmly in charge of every decision.
 
 ## Solution Overview
 
-An AI-powered clinical decision support assistant that answers clinical queries by combining a Knowledge Graph of medical entities (conditions, treatments, drugs, guidelines) with vector-based retrieval over clinical documents. Clinicians can ask questions in natural language and receive grounded, explainable answers with source citations. The system is designed with a strict human-in-the-loop model — it surfaces information and recommendations, never makes autonomous clinical decisions.
+Smart Clinical Triage takes a patient's symptoms - via natural-language speech, uploaded images, or text - and runs them through a panel of specialty AI agents (Ortho, Cardio, Derma, and others) that debate a differential diagnosis: each proposes a candidate condition, critiques the others, and refines its position through multiple rounds. Each candidate diagnosis carries two confidence scores - an AI-based likelihood and an expert-informed likelihood - combined via a Naive Bayes approach, so clinical expertise captured in a knowledge graph directly shapes the AI's confidence, not just its raw output. A clinician reviews and approves every diagnosis before it goes further; an insurer review step and an appointments orchestrator (which books labs and doctor slots automatically) carry the approved plan through to action.
 
 ## Architecture
 
 ```
-Clinical Query (natural language)
-    ↓
-GraphRAG Retrieval Engine
-├── Neo4j Medical Knowledge Graph
-│   (Conditions → Treatments → Drugs → Guidelines)
-└── Vector Store (clinical document embeddings)
-    ↓
-LLM Synthesis (with source citations)
-    ↓
-Explainable Answer + Source References
-    ↓
-Clinician Review and Decision
+Patient (speech / image / text)
+    |
+Smart Clinical Triage Dashboard
+    |
+Specialty Agent Debate  --  Ortho / Cardio / Derma / ... agents
+    |                       propose -> critique -> refine
+    |
+Knowledge Graph RAG DB  <--  Expert Knowledge Incorporation (clinician-extendable)
+    |
+Naive Bayes combination: AI-based likelihood + expert-based likelihood
+    |
+Clinician Review Dashboard  --  approve / feedback
+    |
+Insurance Review Dashboard  --  approve / feedback
+    |
+Appointments Orchestrator  -->  Lab booking
+                            -->  Doctor / Clinic booking
 ```
 
-1. **Medical Knowledge Graph** — Neo4j models clinical entities (conditions, symptoms, treatments, drug interactions, clinical guidelines) as typed nodes with labelled relationships (`TREATS`, `CONTRAINDICATED_WITH`, `FOLLOWS_GUIDELINE`).
-2. **Document Store** — clinical guideline documents and protocols are chunked and embedded into a vector store for semantic retrieval.
-3. **GraphRAG** — queries retrieve both the relevant graph subgraph and semantically similar document chunks, providing the LLM with structured and unstructured context.
-4. **Explainable Output** — every answer includes source citations (guideline name, document section) so clinicians can verify the information independently.
-5. **Human-in-the-Loop** — the assistant is positioned as a decision support tool. No clinical action is taken without explicit clinician review and approval.
+1. **Multi-modal intake** - patients describe symptoms by speech, image upload, or free text, alongside structured details (location, demographics, vitals, medical history, allergies, insurance).
+2. **Multi-agent debate** - specialty agents each propose a candidate diagnosis, critique each other's reasoning, and refine their position across rounds rather than voting once.
+3. **Hybrid confidence scoring** - every candidate diagnosis carries an AI-based likelihood and a separate expert-based likelihood (sourced from a knowledge graph that clinicians can extend directly), combined via a Naive Bayes approach rather than trusting the LLM's confidence alone.
+4. **Human-in-the-loop, twice over** - a clinician reviews and approves the diagnosis before an insurer review step also signs off, before anything reaches the appointments stage.
+5. **Action, not just advice** - an Appointments Orchestrator turns an approved plan into real bookings: lab tests and doctor appointments, prioritised and filtered by location.
 
 ## Technologies Used
 
-- Neo4j (medical knowledge graph)
-- Cypher (graph querying)
-- LangChain (GraphRAG orchestration)
-- FAISS (vector similarity search)
-- OpenAI (Azure deployment, LLM backbone)
-- FastAPI (backend API)
-- Streamlit (clinical UI prototype)
+- Multi-agent debate architecture (propose / critique / refine)
+- Knowledge Graph + RAG
+- Naive Bayes (combining AI and expert-sourced likelihoods)
+- LLM reasoning (diagnosis generation and appointment orchestration)
+- Speech and image input processing
 - Python
 
 ## AI Concepts Demonstrated
 
-- Knowledge Graphs (medical entity and relationship modelling)
-- GraphRAG (graph-augmented clinical retrieval)
-- RAG (Retrieval-Augmented Generation)
-- Explainable AI (source citations for every answer)
-- Human-in-the-Loop decision support
+- Multi-agent debate for differential diagnosis, rather than a single model's one-shot answer
+- Hybrid AI/expert confidence scoring - a principled way to let domain expertise correct model confidence
+- Knowledge-graph-grounded reasoning that clinicians can directly extend
+- Double human-in-the-loop review (clinician, then insurer) before any downstream action
+- Explicit non-diagnostic framing - the tool surfaces a differential for a clinician to confirm, never a final diagnosis
 
 ## Key Learnings
 
-- In healthcare, explainability is not optional — clinicians need to know where an answer came from before they can trust it. Citation-backed answers were far better received than black-box responses.
-- Graph schema design for clinical data is complex: drug interactions, contraindications, and guideline hierarchies require careful relationship modelling to avoid misleading traversals.
-- GraphRAG outperforms flat RAG for relationship queries ("what are the contraindications for X in patients with Y?") because the graph encodes those relationships explicitly.
-- Human-in-the-loop framing is the right positioning for clinical AI — "decision support" rather than "autonomous assistant" reduces resistance and increases safe adoption.
+- Multi-agent debate surfaces a better differential than a single model call - specialty agents catching each other's blind spots produces a more clinically useful shortlist than one model guessing alone.
+- Blending AI-based and expert-based likelihoods (rather than picking one) gives a confidence score clinicians can actually trust, since it's visibly grounded in something beyond the model's own certainty.
+- Going from "diagnosis" to "diagnosis with a booked appointment" - not stopping at advice - is what makes a triage tool actually useful rather than just informative.
+- A clear, prominent safety disclaimer ("AI can make errors - consult an authorised medical professional for any final diagnosis") isn't boilerplate; it's core to how the tool should be used.
 
-## Screenshots
+## Code
 
-_Screenshots to be added._
+No public repo - a hackathon project documented through a demo video and presentation slides rather than published code.
 
 ## Future Enhancements
 
+- Additional specialty agents beyond the current set
 - Integration with EHR systems for patient-specific context (with appropriate access controls)
-- Real-time guideline updates from authoritative clinical sources
-- Audit trail — every query and response logged for clinical governance review
-- Multi-modal input — accept lab reports, imaging notes, and discharge summaries for richer context
+- Audit trail - every query, debate round, and approval logged for governance review

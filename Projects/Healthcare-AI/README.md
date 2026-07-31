@@ -4,4 +4,4 @@ AI systems applied to clinical workflows and healthcare data. These projects dem
 
 | Project | Description |
 |---|---|
-| [Smart Clinical Assistant](Smart-Clinical-Assistant/) | AI-powered clinical decision support and knowledge retrieval for healthcare teams |
+| [Smart Clinical Triage](Smart-Clinical-Assistant/) | Multi-agent specialty debate for differential diagnosis, with hybrid AI/expert confidence scoring and clinician + insurer review |
