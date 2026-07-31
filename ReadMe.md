@@ -10,29 +10,29 @@ Most enterprise work is delivered under client NDA, so those repos stay private 
 |---|---|---|
 | [RootSeekers - Incident RCA Copilot](Projects/Agentic-AI/RootSeekers-Incident-RCA/) | LangGraph multi-agent RCA copilot for Google Cloud incidents: parallel evidence agents, root cause synthesis, chat assistant | 🔓 [Repo](https://github.com/Pankaj81-eng/Hackathon2026_RootSeekers) · 📄 [Case study](Projects/Agentic-AI/RootSeekers-Incident-RCA/README.md) · 🎥 [Demo](https://youtu.be/2NhyX1LoOBc) |
 | [Voice Pizza Agent](Projects/Agentic-AI/Voice-Pizza-Agent/) | Voice-first ordering: structured intent extraction, decision layer, Playwright automation with human-in-the-loop | 🔒 Private · 🎥 [Demo](https://www.youtube.com/watch?v=KLMR7H7rU3g) |
-| [Nemo AI Companion](Projects/Agentic-AI/Nemo-AI-Companion/) | Conversational knowledge assistant with search and tool use | 📄 Case study only |
+| [Nemo AI Companion](Projects/Agentic-AI/Nemo-AI-Companion/) | Conversational knowledge assistant with search and tool use | 📄 [Case study](Projects/Agentic-AI/Nemo-AI-Companion/README.md) |
 | [LangChain Azure Agent](Projects/Agentic-AI/LangChain-Azure-Agent/) | Minimal LangChain agent on Azure OpenAI demonstrating tool/function calling | 🔓 [Repo](https://github.com/Pankaj81-eng/langchain-azure-agent) |
 
 ## Enterprise Agentic AI Solutions
 
 | Project | What it does | Code |
 |---|---|---|
-| [Infrastructure Discovery Platform](Projects/Enterprise-AI-Solutions/Infrastructure-Discovery-Platform/) | Graph-powered infrastructure mapping and dependency analysis | 📄 Case study only (client work) |
-| [Kubernetes Consolidation Assistant](Projects/Enterprise-AI-Solutions/Kubernetes-Consolidation-Assistant/) | Agentic planning system for Kubernetes migration and consolidation | 📄 Case study only (client work) |
-| [Enterprise Planning Agent](Projects/Enterprise-AI-Solutions/Enterprise-Planning-Agent/) | LangGraph-based multi-step planning agent for enterprise initiatives | 📄 Case study only (client work) |
+| [Infrastructure Discovery Platform](Projects/Enterprise-AI-Solutions/Infrastructure-Discovery-Platform/) | Graph-powered infrastructure mapping and dependency analysis | 📄 [Case study](Projects/Enterprise-AI-Solutions/Infrastructure-Discovery-Platform/README.md) (client work) |
+| [Kubernetes Consolidation Assistant](Projects/Enterprise-AI-Solutions/Kubernetes-Consolidation-Assistant/) | Agentic planning system for Kubernetes migration and consolidation | 📄 [Case study](Projects/Enterprise-AI-Solutions/Kubernetes-Consolidation-Assistant/README.md) (client work) |
+| [Enterprise Planning Agent](Projects/Enterprise-AI-Solutions/Enterprise-Planning-Agent/) | LangGraph-based multi-step planning agent for enterprise initiatives | 📄 [Case study](Projects/Enterprise-AI-Solutions/Enterprise-Planning-Agent/README.md) (client work) |
 
 ## Healthcare AI
 
 | Project | What it does | Code |
 |---|---|---|
-| [Smart Clinical Assistant](Projects/Healthcare-AI/Smart-Clinical-Assistant/) | AI-powered clinical decision support and knowledge retrieval | 📄 Case study only (client work) |
+| [Smart Clinical Assistant](Projects/Healthcare-AI/Smart-Clinical-Assistant/) | AI-powered clinical decision support and knowledge retrieval | 📄 [Case study](Projects/Healthcare-AI/Smart-Clinical-Assistant/README.md) (client work) |
 
 ## AI-Enabled Retrieval Systems
 
 | Project | What it does | Code |
 |---|---|---|
-| [AI Test Case Generator](Projects/Retrieval-Systems/AI-Test-Case-Generator/) | Test case generation from natural language prompts using dual RAG (local FAISS + live Tavily search) and Mistral-7B | 📄 Case study only · 🎥 [Demo](https://www.youtube.com/watch?v=oSUILlU8x6s) |
-| [AI Test Data Generator](Projects/Retrieval-Systems/AI-Test-Data-Generator/) | Synthetic test data generation with schema-driven field definitions | 📄 Case study only (client work) |
+| [AI Test Case Generator](Projects/Retrieval-Systems/AI-Test-Case-Generator/) | Test case generation from natural language prompts using dual RAG (local FAISS + live Tavily search) and Mistral-7B | 📄 [Case study](Projects/Retrieval-Systems/AI-Test-Case-Generator/README.md) · 🎥 [Demo](https://www.youtube.com/watch?v=oSUILlU8x6s) |
+| [AI Test Data Generator](Projects/Retrieval-Systems/AI-Test-Data-Generator/) | Synthetic test data generation with schema-driven field definitions | 📄 [Case study](Projects/Retrieval-Systems/AI-Test-Data-Generator/README.md) (client work) |
 | [Azure AI Search - Document Q&A](Projects/Retrieval-Systems/Azure-AI-Search-RAG/) | Document upload, indexing and full-text retrieval on Azure | 🔓 [Repo](https://github.com/Pankaj81-eng/azure-ai-search-rag) |
 | [Document Summarizer](Projects/Retrieval-Systems/Document-Summarizer/) | Azure OpenAI-powered summarisation of uploaded PDF, Word and text documents | 🔒 Private (personal project) |
 
