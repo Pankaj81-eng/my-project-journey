@@ -1,61 +1,61 @@
-# Nemo AI Companion
+# Nemo - AI Hospital Companion
 
 ## Business Problem
 
-General-purpose search engines return a list of links; they don't synthesise an answer or adapt to what the user already knows. A conversational AI companion can answer technical and general queries in context, use tools to fetch fresh information, and maintain a coherent conversation across multiple turns — reducing the back-and-forth of traditional search.
+Hospitalised patients spend long stretches of time with medical questions, anxiety, and boredom that nursing staff can't always address immediately. A voice-first companion that can answer routine medical questions, offer emotional support, and provide light entertainment - while staying clearly non-diagnostic - reduces that gap without adding to clinical workload.
 
 ## Solution Overview
 
-TechTales AI (codenamed Nemo) is a conversational assistant prototype built with LangChain. It answers technical and general queries by combining LLM reasoning with live web search and calculator tools. The agent decides which tool to call based on the question type, fetches fresh results when needed, and synthesises a grounded answer rather than relying solely on model knowledge.
+Nemo is a multi-agent AI hospital companion built with CrewAI. A coordinator agent ("Nemo") greets the patient and routes each request to one of three specialists - Medical, Wellbeing, or Recreation - based on what's being asked. The whole interaction is voice-first: patients speak naturally, and Nemo responds in kind.
 
 ## Architecture
 
 ```
-User Query
-    ↓
-LangChain Agent (ReAct loop)
-├── Web Search Tool (Tavily / DuckDuckGo)
-├── Calculator Tool
-└── LLM Reasoning (Mistral-7B / GPT)
-    ↓
-Synthesised Answer
+Patient (voice)
+    |
+Web Speech API (speech-to-text)
+    |
+Next.js frontend  -->  FastAPI backend
+    |
+CrewAI Coordinator ("Nemo") -- routes to -->  Medical Agent
+                                          -->  Wellbeing Agent
+                                          -->  Recreation Agent
+    |
+Azure OpenAI GPT-4o (agent reasoning)
+    |
+Azure Neural TTS (voice response)
 ```
-
-1. **Agent Loop** — LangChain's `initialize_agent` with `ZERO_SHOT_REACT_DESCRIPTION` decides at each step whether to call a tool or produce a final answer.
-2. **Search Tool** — Tavily or DuckDuckGo fetch live results for factual or time-sensitive queries, providing the LLM with grounded context.
-3. **Calculator Tool** — handles arithmetic and unit conversion queries precisely, avoiding LLM hallucination on numerical tasks.
-4. **Prompt Design** — a custom system prompt stored in a `.txt` file shapes the agent's persona and response style, making it easy to iterate without touching code.
 
 ## Technologies Used
 
-- Python
-- LangChain (agent orchestration and tool use)
-- Mistral-7B (Hugging Face Inference API)
-- Tavily Search API
-- DuckDuckGo Search API
-- python-dotenv
+- CrewAI (multi-agent coordination)
+- LangChain
+- Azure OpenAI GPT-4o
+- Azure Speech Services (speech-to-text + neural text-to-speech)
+- Next.js 14 + TypeScript (frontend)
+- FastAPI (backend)
+- Web Audio API (live audio visualisation)
 
 ## AI Concepts Demonstrated
 
-- Agentic AI (ReAct agent loop with tool selection)
-- Tool Use (web search, calculator)
-- Multi-turn Conversations (context maintained across exchanges)
-- Retrieval-Augmented Generation (live search grounding)
+- Multi-agent coordination with delegation (a coordinator agent routing to specialist agents, not a single monolithic prompt)
+- Domain-differentiated agent personalities - each specialist has its own role, temperature, and token budget suited to its task
+- Voice-first interaction design, not text-first with voice bolted on
+- Non-diagnostic-by-design scope for a healthcare-adjacent assistant - the Medical agent explains, it doesn't diagnose
 
 ## Key Learnings
 
-- The ReAct pattern (Reason → Act → Observe → Repeat) is intuitive to debug because each step is logged as a distinct thought — you can see exactly why the agent chose a tool.
-- Grounding answers with search results significantly reduces hallucination on factual queries.
-- Modular prompt files (not hardcoded strings) make persona iteration fast without touching logic.
-- LangChain's `load_tools()` abstracts tool setup well for prototyping, though production systems benefit from custom tool implementations for better error handling.
+- Giving each specialist agent a distinct temperature (Medical at 0.3 for accuracy, Recreation at 0.7 for playfulness) produced noticeably more appropriate responses than a single shared setting across all agents.
+- A coordinator agent with delegation enabled while specialists have it off keeps routing logic centralised and predictable - only one agent decides where a request goes.
+- For a healthcare-adjacent voice product, scoping the Medical agent to explain rather than diagnose from the start avoided a whole category of safety and trust problems later.
 
-## Screenshots
+## Code
 
-_Screenshots to be added._
+Private repo - a hackathon project built with a small team. Kept private rather than public.
 
 ## Future Enhancements
 
-- Persistent conversation memory using a vector store (FAISS or Chroma) for recall across sessions
-- Domain specialisation — load a custom knowledge base for a specific topic area
-- Streaming responses for lower perceived latency
-- Switch to LangGraph for finer control over agent state and multi-step planning
+- Multi-language support for diverse patient populations
+- EHR integration for personalised medical information (with appropriate access controls)
+- Additional specialist agents (nutrition, pharmacy, discharge planning)
+- Analytics dashboard for conversation insights and patient sentiment
