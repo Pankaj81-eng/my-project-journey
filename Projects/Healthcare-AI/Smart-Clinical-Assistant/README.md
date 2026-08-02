@@ -2,7 +2,7 @@
 
 Built for a hackathon.
 
-🎥 [Watch the demo](https://drive.google.com/file/d/1TgwwDbhPWnQ4IVDUnlfnAjwf6yeKrG87/view?usp=sharing)
+🎥 [Watch the demo](https://youtu.be/bAR0ogREj8A)
 
 ## Business Problem
 
