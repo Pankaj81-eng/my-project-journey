@@ -53,10 +53,6 @@ Discovery Agent  →  Neo4j Workload Graph
 - Graph traversal for dependency analysis is far more reliable than heuristics — Cypher shortest-path queries naturally surface migration risk.
 - Human-in-the-loop via GitHub PRs was essential for enterprise adoption — no automated system should apply infrastructure changes without a review gate.
 
-## Screenshots
-
-_Screenshots to be added._
-
 ## Future Enhancements
 
 - Automated regression testing of transformed Helm charts in a preview namespace before PR submission

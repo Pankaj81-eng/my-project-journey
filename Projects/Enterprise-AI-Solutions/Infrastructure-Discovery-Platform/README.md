@@ -54,10 +54,6 @@ React Frontend (Query UI + Graph Visualisation)
 - Cypher generation via LLM requires careful prompt engineering and schema injection to stay within safe query patterns.
 - Impact analysis (what breaks if X changes?) is a natural graph traversal — no ML needed, just well-designed relationships.
 
-## Screenshots
-
-_Screenshots to be added._
-
 ## Future Enhancements
 
 - Real-time ingestion via event-driven connectors (Kafka, webhooks)

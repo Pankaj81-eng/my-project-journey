@@ -48,10 +48,6 @@ Pandas + XlsxWriter (Excel export)
 - `.env`-based credential management is straightforward with `python-dotenv` and keeps API keys out of source code.
 - Excel export with proper formatting (column widths, typed cells) makes the output immediately usable without manual cleanup.
 
-## Screenshots
-
-_Screenshots to be added._
-
 ## Future Enhancements
 
 - CSV export alongside Excel

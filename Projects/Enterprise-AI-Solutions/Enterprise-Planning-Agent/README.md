@@ -53,10 +53,6 @@ Structured Programme Plan + Recommendations
 - LLM-generated plans need grounding — passing graph context alongside the prompt dramatically reduces hallucinated dependencies.
 - Human-in-the-loop checkpoints matter: the agent drafts, the human approves. This framing was key to stakeholder trust.
 
-## Screenshots
-
-_Screenshots to be added._
-
 ## Future Enhancements
 
 - Integration with project management tools (Jira, Monday.com) for live data ingestion
