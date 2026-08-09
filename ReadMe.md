@@ -8,7 +8,7 @@ Most enterprise work is delivered under client NDA, so those repos stay private 
 
 | Project | What it does | Code |
 |---|---|---|
-| [RootSeekers - Incident RCA Copilot](Projects/Agentic-AI/RootSeekers-Incident-RCA/) | LangGraph multi-agent RCA copilot for Google Cloud incidents: parallel evidence agents, root cause synthesis, chat assistant | 🔓 [Repo](https://github.com/Pankaj81-eng/Hackathon2026_RootSeekers) · 📄 [Case study](Projects/Agentic-AI/RootSeekers-Incident-RCA/README.md) |
+| [RootSeekers - Incident RCA Copilot](Projects/Agentic-AI/RootSeekers-Incident-RCA/) | LangGraph multi-agent RCA copilot for Google Cloud incidents: parallel evidence agents, root cause synthesis, chat assistant | 🔒 Private · 📄 [Case study](Projects/Agentic-AI/RootSeekers-Incident-RCA/README.md) |
 | [Voice Pizza Agent](Projects/Agentic-AI/Voice-Pizza-Agent/) | Voice-first ordering: structured intent extraction, decision layer, Playwright automation with human-in-the-loop | 🔒 Private · 🎥 [Demo](https://www.youtube.com/watch?v=KLMR7H7rU3g) |
 | [Nemo - AI Hospital Companion](Projects/Agentic-AI/Nemo-AI-Companion/) | CrewAI multi-agent voice companion for hospital patients: medical, wellbeing and recreation specialists | 📄 [Case study](Projects/Agentic-AI/Nemo-AI-Companion/README.md) |
 | [LangChain Azure Agent](Projects/Agentic-AI/LangChain-Azure-Agent/) | Minimal LangChain agent on Azure OpenAI demonstrating tool/function calling | 🔓 [Repo](https://github.com/Pankaj81-eng/langchain-azure-agent) |
